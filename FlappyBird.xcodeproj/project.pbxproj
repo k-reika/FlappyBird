@@ -12,6 +12,7 @@
 		E6EE230E2282A438007D5185 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6EE230C2282A438007D5185 /* Main.storyboard */; };
 		E6EE23102282A439007D5185 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6EE230F2282A439007D5185 /* Assets.xcassets */; };
 		E6EE23132282A439007D5185 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6EE23112282A439007D5185 /* LaunchScreen.storyboard */; };
+		E6EE231B2282A71C007D5185 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EE231A2282A71C007D5185 /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		E6EE230F2282A439007D5185 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6EE23122282A439007D5185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6EE23142282A439007D5185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6EE231A2282A71C007D5185 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				E6EE230F2282A439007D5185 /* Assets.xcassets */,
 				E6EE23112282A439007D5185 /* LaunchScreen.storyboard */,
 				E6EE23142282A439007D5185 /* Info.plist */,
+				E6EE231A2282A71C007D5185 /* GameScene.swift */,
 			);
 			path = FlappyBird;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6EE231B2282A71C007D5185 /* GameScene.swift in Sources */,
 				E6EE230B2282A438007D5185 /* ViewController.swift in Sources */,
 				E6EE23092282A438007D5185 /* AppDelegate.swift in Sources */,
 			);
@@ -282,7 +286,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer: SmartDeviceGr i-enter (A7QY4NQV5A)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XLM7K96PXP;
 				INFOPLIST_FILE = FlappyBird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -290,8 +296,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.reika.kikuchi.FlappyBird;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Team_DEV;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -299,7 +306,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer: SmartDeviceGr i-enter (A7QY4NQV5A)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XLM7K96PXP;
 				INFOPLIST_FILE = FlappyBird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -307,8 +316,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.reika.kikuchi.FlappyBird;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Team_DEV;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
