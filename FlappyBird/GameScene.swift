@@ -13,12 +13,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scrollNode:SKNode!
     var wallNode:SKNode!
     var bird:SKSpriteNode!
+    var item:SKSpriteNode!
     
     // 衝突判定カテゴリー
     let birdCategory: UInt32 = 1 << 0   //0...00001
     let groundCategory: UInt32 = 1 << 1 //0...00010
     let wallCategory: UInt32 = 1 << 2   //0...00100
     let scoreCategory: UInt32 = 1 << 3  //0...01000
+    let itemCategory: UInt32 = 1 << 4   //0...10000sss
     
     // スコア用
     var score = 0
@@ -49,6 +51,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setupCloud()
         setupWall()
         setupBird()
+        setupItem()
         
         setupScoreLabel()
     }
@@ -185,11 +188,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // 鳥の画像サイズを取得
         let birdSize = SKTexture(imageNamed: "bird_a").size()
         
-        // 鳥が通り抜ける隙間の長さを鳥のサイズの３倍とする
-        let slit_length = birdSize.height * 3
+        // 鳥が通り抜ける隙間の長さを鳥のサイズの4倍とする
+        let slit_length = birdSize.height * 4
         
-        //隙間位置の上下の揺れ幅を鳥のサイズの３倍とする
-        let random_y_range = birdSize.height * 3
+        //隙間位置の上下の揺れ幅を鳥のサイズの4倍とする
+        let random_y_range = birdSize.height * 4
         
         // 下の壁のY軸加減位置（中央位置から下方向の最大振れ幅で下の壁を表示する位置)を計算
         let groundSize = SKTexture(imageNamed: "ground").size()
@@ -290,6 +293,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // スプライトを追加する
         addChild(bird)
+    }
+    
+    func setupItem(){
+        // itemの画像を2種類読み込む
+        let itemTexture = SKTexture(imageNamed: "item")
+        itemTexture.filteringMode = .linear
+        
+        // スプライトを作成
+        item = SKSpriteNode(texture: itemTexture)
+        item.position = CGPoint(x: self.frame.size.width * 0.2, y:self.frame.size.height * 0.7)
+        _ = SKAction.wait(forDuration: 1)
+        
+        item.size = CGSize(width: item.size.width*0.2, height: item.size.height*0.2)
+        
+//        // 壁を作成->時間待ち->壁を作成を無限に繰り返すアクションを作成
+//        let repeatForeverAnimation = SKAction.repeatForever(SKAction.sequence([createWallAnimation, waitAnimation]))
+//
+//        
+//        // アニメーションを設定
+//        item.run()
+        
+        // スプライトを追加する
+        addChild(item)
     }
     
     // SKPhysiscsContactDelegateのメソッド。衝突した時に呼ばれる
