@@ -110,7 +110,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.run(itemSound)
             
             // itemを消す
-            self.deleteItem.run(SKAction.removeFromParent())
+            if (contact.bodyA.categoryBitMask == itemCategory){
+                contact.bodyA.node?.removeFromParent()
+             }else {
+                 contact.bodyB.node?.removeFromParent()
+             }
+            
+            //self.deleteItem.run(SKAction.removeFromParent())
             
             
         } else {
