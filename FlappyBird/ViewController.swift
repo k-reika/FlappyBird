@@ -21,6 +21,8 @@ class ViewController: UIViewController {
         // FPSを表示する
         skView.showsFPS = true
         
+        skView.showsPhysics = true
+        
         // ノードの数を表示する
         skView.showsNodeCount = true
         
